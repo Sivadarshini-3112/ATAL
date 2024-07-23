@@ -3,6 +3,7 @@ import Slider from "../Components/Homepage/slider";
 import AboutUs from "../Components/Homepage/about_us";
 import UpcomingEvents from "../Components/Homepage/upcoming_events";
 
+
 const Home = () => {
   return (
     <>

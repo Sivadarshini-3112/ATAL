@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import startup2 from '../assets/Images/startup2.jpg';
+import Ongoing from "../Components/Startups/Ongoing";
+import Graduate from "../Components/Startups/Graduate";
+
 
 const StartUps = () => {
   const [selectedButton, setSelectedButton] = useState('ongoing'); // Default selection
@@ -38,12 +41,17 @@ const StartUps = () => {
             <hr className="absolute top-0 left-0 w-full h-1 bg-gray-300" />
             {/* Dynamic blue line */}
             <div
-              className={`absolute top-0 h-1 bg-blue-900 transition-all duration-300 ${selectedButton === 'ongoing' ? 'w-[150px]' : 'w-[150px]'} ${selectedButton === 'graduate' ? 'w-[100px]' : 'w-0'} ${
-                selectedButton === 'ongoing' ? 'left-[625px]' : 'left-[795px]'
-              }`}
+              className={`absolute top-0 h-1 bg-blue-900 transition-all duration-300 ${
+                selectedButton === 'ongoing' ? 'w-[150px] left-[790px]' : 'w-0'
+              } ${selectedButton === 'graduate' ? 'w-[150px] left-[950px]' : 'w-0'}`}
             />
           </div>
         </div>
+      </div>
+
+      <div className="mt-4">
+        {selectedButton === 'ongoing' && <Ongoing />}
+        {selectedButton === 'graduate' && <Graduate />}
       </div>
     </>
   );
